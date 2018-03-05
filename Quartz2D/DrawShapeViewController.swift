@@ -19,7 +19,7 @@ class DrawShapeViewController: UIViewController {
     }
 }
 
-private class DrawShapeView: UIView {
+class DrawShapeView: UIView {
     override func draw(_ rect: CGRect) {
         
     }

@@ -19,7 +19,7 @@ class DrawTextViewController: UIViewController {
     }
 }
 
-private class DrawTextView: UIView {
+class DrawTextView: UIView {
 
     override func draw(_ rect: CGRect) {
     
