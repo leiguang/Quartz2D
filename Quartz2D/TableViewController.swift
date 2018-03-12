@@ -14,6 +14,7 @@ class TableViewController: UITableViewController {
         ["title": "画线", "className": "DrawLineViewController"],
         ["title": "画图形", "className": "DrawShapeViewController"],
         ["title": "画文字", "className": "DrawTextViewController"],
+        ["title": "图形变换", "className": "TransformsViewController"],
     ]
 
     override func viewDidLoad() {

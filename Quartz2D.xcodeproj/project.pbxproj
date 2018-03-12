@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A661643205653350055FA08 /* TransformsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A661642205653350055FA08 /* TransformsViewController.swift */; };
+		9A661645205653A20055FA08 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A661644205653A20055FA08 /* DetailViewController.swift */; };
 		9AB34C70204BAA9D00201B70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB34C6F204BAA9D00201B70 /* AppDelegate.swift */; };
 		9AB34C77204BAA9D00201B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AB34C76204BAA9D00201B70 /* Assets.xcassets */; };
 		9AB34C7A204BAA9D00201B70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AB34C78204BAA9D00201B70 /* LaunchScreen.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A661642205653350055FA08 /* TransformsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformsViewController.swift; sourceTree = "<group>"; };
+		9A661644205653A20055FA08 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9AB34C6C204BAA9D00201B70 /* Quartz2D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quartz2D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AB34C6F204BAA9D00201B70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AB34C76204BAA9D00201B70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,9 +64,11 @@
 			children = (
 				9AB34C6F204BAA9D00201B70 /* AppDelegate.swift */,
 				9AB34C81204BAC9100201B70 /* TableViewController.swift */,
+				9A661644205653A20055FA08 /* DetailViewController.swift */,
 				9AB34C83204BAEFA00201B70 /* DrawLineViewController.swift */,
 				9AB34C87204C473800201B70 /* DrawShapeViewController.swift */,
 				9AB34C89204C491100201B70 /* DrawTextViewController.swift */,
+				9A661642205653350055FA08 /* TransformsViewController.swift */,
 				9AB34C76204BAA9D00201B70 /* Assets.xcassets */,
 				9AB34C78204BAA9D00201B70 /* LaunchScreen.storyboard */,
 				9AB34C7B204BAA9D00201B70 /* Info.plist */,
@@ -146,6 +152,8 @@
 				9AB34C84204BAEFA00201B70 /* DrawLineViewController.swift in Sources */,
 				9AB34C88204C473800201B70 /* DrawShapeViewController.swift in Sources */,
 				9AB34C82204BAC9100201B70 /* TableViewController.swift in Sources */,
+				9A661643205653350055FA08 /* TransformsViewController.swift in Sources */,
+				9A661645205653A20055FA08 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
