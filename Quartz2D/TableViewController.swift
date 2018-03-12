@@ -14,6 +14,7 @@ class TableViewController: UITableViewController {
         ["title": "画线", "className": "DrawLineViewController"],
         ["title": "画图形", "className": "DrawShapeViewController"],
         ["title": "画文字", "className": "DrawTextViewController"],
+        ["title": "用当前的绘画路径替代之前的", "className": "ReplacePathWithStrokedPathViewController"],
     ]
 
     override func viewDidLoad() {

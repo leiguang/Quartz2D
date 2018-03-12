@@ -14,6 +14,7 @@
 		9AB34C84204BAEFA00201B70 /* DrawLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB34C83204BAEFA00201B70 /* DrawLineViewController.swift */; };
 		9AB34C88204C473800201B70 /* DrawShapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB34C87204C473800201B70 /* DrawShapeViewController.swift */; };
 		9AB34C8A204C491100201B70 /* DrawTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB34C89204C491100201B70 /* DrawTextViewController.swift */; };
+		9AB34C8C20517D1B00201B70 /* ReplacePathWithStrokedPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB34C8B20517D1B00201B70 /* ReplacePathWithStrokedPathViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9AB34C83204BAEFA00201B70 /* DrawLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawLineViewController.swift; sourceTree = "<group>"; };
 		9AB34C87204C473800201B70 /* DrawShapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawShapeViewController.swift; sourceTree = "<group>"; };
 		9AB34C89204C491100201B70 /* DrawTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawTextViewController.swift; sourceTree = "<group>"; };
+		9AB34C8B20517D1B00201B70 /* ReplacePathWithStrokedPathViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplacePathWithStrokedPathViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				9AB34C83204BAEFA00201B70 /* DrawLineViewController.swift */,
 				9AB34C87204C473800201B70 /* DrawShapeViewController.swift */,
 				9AB34C89204C491100201B70 /* DrawTextViewController.swift */,
+				9AB34C8B20517D1B00201B70 /* ReplacePathWithStrokedPathViewController.swift */,
 				9AB34C76204BAA9D00201B70 /* Assets.xcassets */,
 				9AB34C78204BAA9D00201B70 /* LaunchScreen.storyboard */,
 				9AB34C7B204BAA9D00201B70 /* Info.plist */,
@@ -143,6 +146,7 @@
 			files = (
 				9AB34C70204BAA9D00201B70 /* AppDelegate.swift in Sources */,
 				9AB34C8A204C491100201B70 /* DrawTextViewController.swift in Sources */,
+				9AB34C8C20517D1B00201B70 /* ReplacePathWithStrokedPathViewController.swift in Sources */,
 				9AB34C84204BAEFA00201B70 /* DrawLineViewController.swift in Sources */,
 				9AB34C88204C473800201B70 /* DrawShapeViewController.swift in Sources */,
 				9AB34C82204BAC9100201B70 /* TableViewController.swift in Sources */,
