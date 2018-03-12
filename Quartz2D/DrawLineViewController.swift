@@ -75,8 +75,10 @@ class DrawLineView: UIView {
             
             let start = CGPoint(x: 50, y: 500)
             let end = CGPoint(x: 350, y: 500)
-//            ctx.addLines(between: [start, end])
+            let zero = CGPoint.zero
+            ctx.addLines(between: [start, end])
             ctx.addRect(CGRect(x: 50, y: 500, width: 300, height: 100))
+            ctx.closePath()
             ctx.replacePathWithStrokedPath()
             ctx.clip()
             
@@ -85,8 +87,7 @@ class DrawLineView: UIView {
             let colorSpace = CGColorSpaceCreateDeviceRGB()
             let gradient = CGGradient(colorsSpace: colorSpace, colors: colors, locations: locations)!
             ctx.drawLinearGradient(gradient, start: start, end: end, options: [])
-            
-            ctx.restoreGState() // 恢复保存的绘图状态
+            ctx.restoreGState() // 恢复保存的绘图状态(恢复画布大小，使后续可继续画图)
         }
         
         
