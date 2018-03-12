@@ -20,7 +20,8 @@ class DrawLineViewController: UIViewController {
     }
 }
 
-private class DrawLineView: UIView {
+class DrawLineView: UIView {
+    
     override func draw(_ rect: CGRect) {
 
         

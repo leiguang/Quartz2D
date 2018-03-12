@@ -19,11 +19,11 @@ class DrawTextViewController: UIViewController {
     }
 }
 
-private class DrawTextView: UIView {
+class DrawTextView: UIView {
 
     override func draw(_ rect: CGRect) {
     
-        let text = "半城柳色半声笛" as NSString
+        let text: NSString = "半城柳色半声笛"
 
         // 字体阴影
         let shadow = NSShadow()
@@ -36,7 +36,7 @@ private class DrawTextView: UIView {
             NSAttributedStringKey.foregroundColor: UIColor.green,
             NSAttributedStringKey.shadow: shadow
         ]
-//        let ctx = UIGraphicsGetCurrentContext()!
+
         text.draw(at: CGPoint(x: 50, y: 100), withAttributes: attrs)
     }
 }
