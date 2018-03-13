@@ -13,7 +13,7 @@ class TableViewController: UITableViewController {
     let titles = [
         ["title": "画线", "className": "DrawLineViewController"],
         ["title": "画图形", "className": "DrawShapeViewController"],
-        ["title": "画文字", "className": "DrawTextViewController"],
+        ["title": "画阴影", "className": "ShadowsViewController"],
         ["title": "图形变换", "className": "TransformsViewController"],
     ]
 
