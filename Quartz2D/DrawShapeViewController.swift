@@ -8,6 +8,25 @@
 
 import UIKit
 
+/**
+ ”非零环绕数规则(Nonzero-rule)“ 和 ”奇偶规则(Even–odd rule)“:
+ 在图形学中判断一个点是否在多边形内，若多边形不是自相交的，那么可以简单的判断这个点在多边形内部还是外部；若多边形是自相交的，那么就需要根据非零环绕数规则和奇-偶规则判断。
+ 1.Nonzero-rule: 首先使多边形的边变为矢量，即每条边都是有方向的，将环绕数初始化为零。若要判断 p点 是否在多边形内部，则从p点向任意方向作一条射线，找出该射线与多边形的所有交叉点，按如下规则统计：每个顺时针的交叉点(边从左到右穿过射线)减1，每个逆时针的交叉点(边从右到左穿过射线)加1。如果统计的环绕数结果为0，则p点在多边形外部；否则，p点在多边形内部。
+ 2.Even–odd rule: 若要判断 p点 是否在多边形内部，则从p点向任意方向作一条射线，统计该射线与多边形相交的边的数目，若数目为奇数，则p为内部点；若数目为偶数，则p为外部点。
+ 
+ iOS中分别用 “winding”和“evenOdd” 来表示，默认是采用“winding”非零环绕数规则。
+ 在多边形内部的点需要绘制，在多边形外部的点不需要绘制。
+ 
+ 苹果文档[Quartz 2D Programming Gudie -> Paths -> Filling a Path](https://developer.apple.com/library/content/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/dq_paths/dq_paths.html#//apple_ref/doc/uid/TP30001066-CH211-TPXREF106)
+ Wikipedia: [Nonzero-rule](https://en.wikipedia.org/wiki/Nonzero-rule)
+ Wikipedia: [Even–odd rule](https://en.wikipedia.org/wiki/Even–odd_rule)
+ */
+
+
+/**
+ 注意：画圆时方法的“clockwise”参数，由于iOS上的UIKit坐标系统中默认将y轴矩阵翻转了一次，所以在draw(...)的 ctx.addArc(...)方法中  指定参数clockwise: true 表示逆时针。(参见addArc(center:radius:startAngle:endAngle:clockwise:)方法的Api描述，或者 [Quartz 2D Programming Gudie -> Overview of Quartz 2D -> Quartz 2D Coordinate Systems](https://developer.apple.com/library/content/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/dq_overview/dq_overview.html#//apple_ref/doc/uid/TP30001066-CH202-TPXREF101))
+ */
+
 class DrawShapeViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -52,11 +71,8 @@ class DrawShapeView: UIView {
         
         
         // MARK: - 画同心圆
-        // "圆1"和"圆2" 中 画圆的方向clockwise不同，一个逆时针绘制，一个顺时针绘制，使用的是默认CGPathFillRule.winding（从不同方向绘制，正负方向相加为0的区域 则抵消，相当于该区域不绘制）
-        // 参考[Quartz 2D Programming Gudie -> Paths -> Filling a Path](https://developer.apple.com/library/content/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/dq_paths/dq_paths.html#//apple_ref/doc/uid/TP30001066-CH211-TPXREF106)
-        // 注意：画圆时方法的“clockwise”参数，由于iOS上的UIKit坐标系统中默认将y轴矩阵翻转了一次，所以在draw(...)的 ctx.addArc(...)方法中  指定参数clockwise: true 表示逆时针。(参见addArc(center:radius:startAngle:endAngle:clockwise:)方法的Api描述，或者 [Quartz 2D Programming Gudie -> Overview of Quartz 2D -> Quartz 2D Coordinate Systems](https://developer.apple.com/library/content/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/dq_overview/dq_overview.html#//apple_ref/doc/uid/TP30001066-CH202-TPXREF101))
         if true {
-            // 圆1
+            // 圆1   ("圆1"和"圆2" 中 画圆的方向clockwise不同，导致效果不同)
             if true {
                 let center = CGPoint(x: 100, y: 300)
                 let radius1: CGFloat = 50
@@ -77,8 +93,7 @@ class DrawShapeView: UIView {
                 ctx.addArc(center: center, radius: radius1, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
                 ctx.addArc(center: center, radius: radius2, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: false)
                 ctx.setFillColor(UIColor.green.cgColor)
-                ctx.fillPath()  // 默认使用CGPathFillRule.winding方式绘制，相当于代码 ctx.fillPath(using: .winding)
-//                ctx.strokePath()
+                ctx.fillPath()
             }
             
             // 圆3
@@ -86,16 +101,21 @@ class DrawShapeView: UIView {
                 let center = CGPoint(x: 300, y: 300)
                 let radius1: CGFloat = 50
                 let radius2: CGFloat = 30
-                let radius3: CGFloat = 10
-                
 
                 // 1.无同心圆效果
-                // 直接调用addArc(...)方法画两个大小圆，设置相同的clockwise参数，（此时调用strokePath() 也无法画出两个圆的效果），再用 ctx.fillPath(using: .evenOdd)模式是无法达到同心圆效果的
+                // 直接调用addArc(...)方法画两个大小圆，设置相同的clockwise参数，（此时调用strokePath() 也无法画出两个圆的效果），再用 ctx.fillPath(using: .evenOdd)模式也是无法达到同心圆效果的
 //                ctx.addArc(center: center, radius: radius1, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
 //                ctx.addArc(center: center, radius: radius2, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
-
+//                ctx.fillPath()
                 
-                // 2.有同心圆效果
+                
+                // 2.有同心圆效果(clockwise方向相反)
+//                ctx.addArc(center: center, radius: radius1, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+//                ctx.addArc(center: center, radius: radius2, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: false)
+//                ctx.fillPath(using: .evenOdd)
+                
+                
+                // 3.有同心圆效果
                 // 调用addArc(...)方法画4个半圆，设置相同的clockwise参数，（此时调用strokePath() 可以画出两个圆的效果），再用 ctx.fillPath(using: .evenOdd)模式可以达到同心圆效果，的个人猜测与addArc(...)方法画圆时的画线连接点内部实现有关。
                 ctx.move(to: CGPoint(x: 350, y: 300))
                 ctx.addArc(center: center, radius: radius1, startAngle: 0, endAngle: CGFloat.pi, clockwise: true)
@@ -107,7 +127,7 @@ class DrawShapeView: UIView {
                 ctx.addArc(center: center, radius: radius2, startAngle: CGFloat.pi, endAngle: 2 * CGFloat.pi, clockwise: true)
                 
                 ctx.setFillColor(UIColor.green.cgColor)
-                ctx.drawPath(using: .eoFillStroke)  // 使用CGPathFillRule.evenOdd方式绘制+描边, 此时若使用ctx.fillPath()无法实现同心圆效果
+                ctx.drawPath(using: .eoFillStroke)  // 使用CGPathFillRule.evenOdd方式绘制+描边
             }
         }
         
@@ -119,12 +139,16 @@ class DrawShapeView: UIView {
             let theta: CGFloat = 2 * CGFloat.pi * (2.0 / 5.0)   // 144 degrees
             let start = CGPoint(x: 0, y: r)
 
-            let offsetX: CGFloat = 100  // 五角星相对于原点的x轴偏移量
+            let offsetX: CGFloat = 0  // 五角星相对于原点的x轴偏移量
             let offsetY: CGFloat = 350  // 五角星相对于原点的y轴偏移量
 
             ctx.saveGState()
-            ctx.translateBy(x: offsetX + psize / 2, y: offsetY + psize / 2)
-            ctx.scaleBy(x: 1.0, y: -1.0)    // 由于UIKit坐标系(y轴朝下)和CG坐标系(y轴朝上) y轴相反，此五角星是以macos的坐标系统为基准画的，因此在绘制到context前通过矩阵垂直翻转坐标系，使五角星尖尖朝上
+            ctx.translateBy(x: psize / 2, y: psize / 2)
+            
+            // 由于UIKit坐标系(y轴朝下)和CG坐标系(y轴朝上) y轴相反，此五角星是以macos的坐标系统为基准画的，因此在绘制到context前通过矩阵垂直翻转坐标系，使五角星尖尖朝上
+            ctx.translateBy(x: offsetX, y: offsetY)
+            ctx.scaleBy(x: 1.0, y: -1.0)
+            
             ctx.move(to: start)
             for i in 1..<5 {
                 let x: CGFloat = r * sin(CGFloat(i) * theta)
@@ -134,7 +158,7 @@ class DrawShapeView: UIView {
 
             ctx.setFillColor(UIColor.red.cgColor)
             ctx.closePath()
-            ctx.fillPath()  //  ctx.fillPath(using: .evenOdd) 使用evenOdd模式，则可以看到五角星的中间未填充
+            ctx.fillPath()  //  若使用ctx.fillPath(using: .evenOdd) evenOdd模式，则可以看到五角星的中间未填充
             ctx.restoreGState()
         }
        
