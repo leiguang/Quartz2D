@@ -20,7 +20,6 @@
 		9AB34C82204BAC9100201B70 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB34C81204BAC9100201B70 /* TableViewController.swift */; };
 		9AB34C84204BAEFA00201B70 /* DrawLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB34C83204BAEFA00201B70 /* DrawLineViewController.swift */; };
 		9AB34C88204C473800201B70 /* DrawShapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB34C87204C473800201B70 /* DrawShapeViewController.swift */; };
-		9AB34C8A204C491100201B70 /* DrawTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB34C89204C491100201B70 /* DrawTextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +38,6 @@
 		9AB34C81204BAC9100201B70 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		9AB34C83204BAEFA00201B70 /* DrawLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawLineViewController.swift; sourceTree = "<group>"; };
 		9AB34C87204C473800201B70 /* DrawShapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawShapeViewController.swift; sourceTree = "<group>"; };
-		9AB34C89204C491100201B70 /* DrawTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawTextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +75,6 @@
 				9A661644205653A20055FA08 /* DetailViewController.swift */,
 				9AB34C83204BAEFA00201B70 /* DrawLineViewController.swift */,
 				9AB34C87204C473800201B70 /* DrawShapeViewController.swift */,
-				9AB34C89204C491100201B70 /* DrawTextViewController.swift */,
 				9A661642205653350055FA08 /* TransformsViewController.swift */,
 				9A1463C6205A177E00C589FD /* PatternsViewController.swift */,
 				9A1463C4205A0A5C00C589FD /* ShadowsViewController.swift */,
@@ -166,7 +163,6 @@
 				9A1463C3205A090A00C589FD /* TransparencyLayersViewController.swift in Sources */,
 				9A1463CA205A4CED00C589FD /* DataManagement.swift in Sources */,
 				9AB34C70204BAA9D00201B70 /* AppDelegate.swift in Sources */,
-				9AB34C8A204C491100201B70 /* DrawTextViewController.swift in Sources */,
 				9AB34C84204BAEFA00201B70 /* DrawLineViewController.swift in Sources */,
 				9AB34C88204C473800201B70 /* DrawShapeViewController.swift in Sources */,
 				9AB34C82204BAC9100201B70 /* TableViewController.swift in Sources */,

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 // [Shadows](https://developer.apple.com/library/content/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/dq_shadows/dq_shadows.html#//apple_ref/doc/uid/TP30001066-CH208-TPXREF101)
 
 /**
@@ -19,6 +20,7 @@ import UIKit
 */
 
 // (阴影的坐标系统跟随当前上下文的坐标系统方向，可设置偏移量、模糊值、颜色。默认阴影颜色为1/3透明度的黑色)
+
 
 class ShadowsViewController: UIViewController {
 
@@ -32,17 +34,40 @@ class ShadowsViewController: UIViewController {
 }
 
 class ShadowsView: UIView {
+
     override func draw(_ rect: CGRect) {
-        let ctx = UIGraphicsGetCurrentContext()!
-        
+    
+        // MARK: - 画文字阴影
         if true {
+            let text: NSString = "半城柳色半声笛"
+            
+            // 字体阴影
+            let shadow = NSShadow()
+            shadow.shadowColor = UIColor.red
+            shadow.shadowOffset = CGSize(width: 2, height: 2)
+            shadow.shadowBlurRadius = 2 // 高斯模糊
+            
+            let attrs = [
+                NSAttributedStringKey.font: UIFont.systemFont(ofSize: 36),
+                NSAttributedStringKey.foregroundColor: UIColor.green,
+                NSAttributedStringKey.shadow: shadow
+            ]
+            
+            text.draw(at: CGPoint(x: 50, y: 100), withAttributes: attrs)
+        }
+        
+        
+        // MARK: - 画矩形阴影
+        if true {
+            let ctx = UIGraphicsGetCurrentContext()!
+            
             ctx.saveGState()
             
             // 矩形1
             let offset = CGSize(width: -15, height: -20)
             let blur: CGFloat = 5   // Blur 效果对比可参见[Shadows -> Figure 7-2]
             let fillColor = UIColor.green.cgColor
-            let rect = CGRect(x: 100, y: 150, width: 100, height: 60)
+            let rect = CGRect(x: 100, y: 220, width: 100, height: 60)
             
             ctx.setShadow(offset: offset, blur: blur)
             ctx.setFillColor(fillColor)
@@ -54,16 +79,15 @@ class ShadowsView: UIView {
             let blur2: CGFloat = 5
             let shadowColor2 = UIColor(red: 1, green: 0, blue: 0, alpha: 0.6).cgColor
             let fillColor2 = UIColor.blue.cgColor
-            let rect2 = CGRect(x: 200, y: 270, width: 100, height: 60)
+            let rect2 = CGRect(x: 200, y: 330, width: 100, height: 60)
             
             ctx.setShadow(offset: offset2, blur: blur2, color: shadowColor2)
             ctx.setFillColor(fillColor2)
             ctx.fill(rect2)
             
+            
             ctx.restoreGState()
         }
-        
-        
-        
     }
 }
+
