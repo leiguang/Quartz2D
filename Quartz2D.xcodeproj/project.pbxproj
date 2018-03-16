@@ -12,6 +12,7 @@
 		9A1463C5205A0A5C00C589FD /* ShadowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1463C4205A0A5C00C589FD /* ShadowsViewController.swift */; };
 		9A1463C7205A177E00C589FD /* PatternsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1463C6205A177E00C589FD /* PatternsViewController.swift */; };
 		9A1463CA205A4CED00C589FD /* DataManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1463C9205A4CED00C589FD /* DataManagement.swift */; };
+		9A1463CC205BA44500C589FD /* CGLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1463CB205BA44500C589FD /* CGLayerViewController.swift */; };
 		9A661643205653350055FA08 /* TransformsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A661642205653350055FA08 /* TransformsViewController.swift */; };
 		9A661645205653A20055FA08 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A661644205653A20055FA08 /* DetailViewController.swift */; };
 		9AB34C70204BAA9D00201B70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB34C6F204BAA9D00201B70 /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 		9A1463C4205A0A5C00C589FD /* ShadowsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowsViewController.swift; sourceTree = "<group>"; };
 		9A1463C6205A177E00C589FD /* PatternsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsViewController.swift; sourceTree = "<group>"; };
 		9A1463C9205A4CED00C589FD /* DataManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagement.swift; sourceTree = "<group>"; };
+		9A1463CB205BA44500C589FD /* CGLayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGLayerViewController.swift; sourceTree = "<group>"; };
 		9A661642205653350055FA08 /* TransformsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformsViewController.swift; sourceTree = "<group>"; };
 		9A661644205653A20055FA08 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9AB34C6C204BAA9D00201B70 /* Quartz2D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quartz2D.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +83,7 @@
 				9A1463C0205A01F200C589FD /* GradientsViewController.swift */,
 				9A1463C2205A090900C589FD /* TransparencyLayersViewController.swift */,
 				9A1463C9205A4CED00C589FD /* DataManagement.swift */,
+				9A1463CB205BA44500C589FD /* CGLayerViewController.swift */,
 				9AB34C76204BAA9D00201B70 /* Assets.xcassets */,
 				9AB34C78204BAA9D00201B70 /* LaunchScreen.storyboard */,
 				9AB34C7B204BAA9D00201B70 /* Info.plist */,
@@ -167,6 +170,7 @@
 				9AB34C88204C473800201B70 /* DrawShapeViewController.swift in Sources */,
 				9AB34C82204BAC9100201B70 /* TableViewController.swift in Sources */,
 				9A661643205653350055FA08 /* TransformsViewController.swift in Sources */,
+				9A1463CC205BA44500C589FD /* CGLayerViewController.swift in Sources */,
 				9A1463C7205A177E00C589FD /* PatternsViewController.swift in Sources */,
 				9A1463C5205A0A5C00C589FD /* ShadowsViewController.swift in Sources */,
 				9A661645205653A20055FA08 /* DetailViewController.swift in Sources */,
