@@ -16,12 +16,20 @@ import UIKit
 // 画线
 class DrawLineViewController: UIViewController {
     
+    let v = DrawLineView(frame: UIScreen.main.bounds)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        let v = DrawLineView(frame: view.bounds)
+//        let v = DrawLineView(frame: view.bounds)
         v.backgroundColor = .white
         view.addSubview(v)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+", style: .done, target: self, action: #selector(add))
+    }
+    
+    @objc func add() {
+        v.setNeedsDisplay()
     }
 }
 
